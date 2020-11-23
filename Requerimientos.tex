@@ -8,158 +8,50 @@
 \usepackage{array,tabularx}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 \begin{document}
-\title{Documento de requerimientos} 
-\include{caratulaTriesgos}
- 
+\include{portada}
 \vspace{1 cm}
 \section{Introduccion}
 	En este documento se hablará acerca de los requerimientos necesarios para la creación de una calculadora para el indice de masa corporal. En la que estaremos involucrando las edades entre 10 y 19 años para tener una mejor comparativa entre las tablas de imc, ya que apartir de los 20 años tanto hombres como mujeres comparten los mismos datos de la tabla.\\
 \subsection{Propósito}
-Los Riesgos dentro de un proyecto de software son eventos o condiciones inciertas que pueden ocurrir y tener un impacto positivo o negativo sobre los objetivos fijados dentro del proyecto.\\
-Es por eso que este documento se realiza con el fin de poder identificar los riesgos de manera clara y así poder atacarlos o prevenirlos con anticipación.\\
-\subsection{Visión general de los posibles riesgos}
-\textbf {Los riesgos principales tienen que ver con las siguientes categorías:} \\
+	La calculadora de indice de masa coporal v1.0 tiene como proposito dar el imc a cualquier persona que este interesado en saberlo. Sabiendo que es un dato muy importante para la salud, por lo cual es de manera gratuita, intuitiva y facil de consultar. Solo requeriras datos personales, como genero, edad, estatura y peso.\\
+\subsection{Alcance}
+	El presente documento especifica los requerimientos que se deben tomar en cuenta en las fases posteriores del desarrollo de la calculadora para el indice de masa corporal, contiene los requerimientos funcionales, no funcionales y asi como los roles que cumple cada usuario.\\
+
+\subsection{Referencias}
+	Con dichos datos el sistema debe calcular el IMC segun la tabla proporcionada en:\\
+		http://www.imss.gob.mx/salud-en-linea/calculaimc\\
+	
+\subsection{Funcionalidades}
 \begin{itemize}
-\item \textit{Problemas del equipo de trabajo.}
-\item \textit{Problemas de planificación del proyecto.}
-\item \textit{Problemas con el manejo de las tecnologías.}
-\item \textit{Problemas con la base de datos.}
+	\item\textit{Calcular el IMC hombre}
+	\item\textit{Calcular el IMC mujer}
+	\item\textit{Dar resultado de IMC}
+	\item\textit{Mostrar de acuerdo a la tabla donde se encuentra}\\
 \end{itemize}
 
-\subsection{Responsabilidades}
-\textbf {Sera responsabilidad del líder de proyecto:} \\
+\subsection{Entorno operativo}
+	La calculadora del imc estara por medio de una pagina web desarrllada por medio de Angular, sera posible acceder a ella por medio de dos maneras. La primera sera atravez del servidor de la clase "Pruebas de Software" y el segundo atraves de un link proporcionado por firebase.\\
+
+\subsection{Requerimientos funcionales}
 \begin{itemize}
-\item \textit{Gestionar el presente plan.}
-\item \textit{Gestionar la calidad del proyecto.}
-\item \textit{Controlar que las actividades se realicen de acuerdo al plan definido.}
-\item \textit{Tomar las medidas necesarias para asegurar que el proyecto se realice en el tiempo establecido.}
-\item \textit{Asegurarse que el proyecto cumpla con el objetivo principal.}
+	\item\textit{El sitema recibe por entrada los siguientes valores:}\\
+			Edad: NUmero entero sin parte decimal\\
+			Peso: Numero con parte decimal (Opcional) representando el peso de la persona en kilos\\
+			Altura: Nunero entero sin decimal representado la altura de una persona en centimetros\\
+	\item\textit{Se debe calcular el imc para hombre y mujer entre edades de 10 y 19 años}\\
+	\item\textit{Se espera que el sistema tenga como salida informacion para el usuario que contenga:}\\
+			Su imc calculado\\
+			Su estado de peso segun la tabla proporcionada\\
 \end{itemize}
-\vspace{1 cm}
 
-\textbf {Equipo de trabajo:} \vspace{5 mm} \\
-Todo el equipo de trabajo deberá tener en cuenta también lo descrito en el presente documento en pos de
-disminuir los riesgos del proyecto y así garantizar que se cumplan los objetivos y requerimientos establecidos.
-\newpage
-
-\subsection{Tabla de riesgos del proyecto}
-\vspace{1 cm}
-\textbf{Identificación del riesgo:}
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|p{8cm}|c|}
-\hline
-\textbf{ID}&\textbf{Riesgo}&\textbf{Categoría}
-\\\hline
-R1&Dificultad en la comunicación vía remota entre los miembros del equipo&Equipo de trabajo.\\\hline
-R2&No contar con la cantidad de información requerida para el proyecto&Proyecto, Base de datos.\\\hline
-R3&El desarrollo y la administración del proyecto lleva más tiempo de lo esperado.&Proyecto, Planificación.\\\hline
-R4&Dificultades durante el desarrollo de alguna etapa del proyecto.&Equipo de trabajo.\\\hline
-R5&Dificultades con el manejo del repositorio y control de versiones.&Equipo de trabajo, Manejo de tecnologías.\\\hline
-R6&Rupturas dentro del repositorio.&Equipo de trabajo, Manejo de las Tecnologías.\\\hline
-R7&El proyecto no cumple con los requerimientos establecidos&proyecto, planificación.\\\hline
-R8&El proyecto no pasa las pruebas establecidas&proyecto, planificación, equipo de trabajo.\\\hline
-\end{tabular}
-\end{table}
-
-\subsection{Probabilidad e Impacto}
-En el presente análisis se empleará una escala de medición subjetiva expresada
-en la siguiente tabla: 
-\begin{table}[h!]
-\begin{tabular}{|c|p{8cm}|}
-\hline
-\textbf{Rango de probabilidad}&\textbf{Impacto}
-\\\hline
-0.10-0.30&Bajo.\\\hline
-0.40-0.60&Medio.\\\hline
-0.70-100&Crítico.\\\hline
-\end{tabular}
-\end{table}
-
-En la siguiente tabla se expresan los riesgos identificados para el proyecto con las
-probabilidades e impactos estimados subjetivamente para cada uno de ellos: 
-\vspace{1 cm}
-\begin{table}[h!]
-\begin{tabular}{|c|c|p{8cm}|}
-\hline
-\textbf{Riesgo}&\textbf{Probabilidad}&\textbf{Impacto}
-\\\hline
-R1&0.40&Medio.\\\hline
-R2&0.70&Crítico.\\\hline
-R3&0.40&Medio.\\\hline
-R4&0.60&Medio.\\\hline
-R4&0.30&Bajo.\\\hline
-R5&0.40&Medio.\\\hline
-R6&0.30&Bajo.\\\hline
-R7&0.30&Bajo.\\\hline
-\end{tabular}
-\end{table}
-
-\subsection{Supervisión y gestión del riesgo}
-Además de haber identificado y listado los posibles riesgos es necesario que este documento sea revisado frecuentemente por todos los involucrados en el proyecto, ya que es posible identificar nuevos riesgos a lo largo del desarrollo de este proyecto y tendrá que ser actualizado para hacer una correcta gestión de los riesgos.
-\vspace{1 cm}
-\begin{table}[h!]
-\begin{tabular}{|p{0.10\linewidth}|p{0.30\linewidth}|p{0.40\linewidth}|p{0.15\linewidth}|}
-\hline
-\textbf{ID Riesgo}&\textbf{Importancia del riesgo}&\textbf{Cómo minimizarlo}&\textbf{Quien lo supervisa}
-\\\hline
-R1&Porque esta dificultad por parte de los integrantes del equipo de trabajo pondría en riesgo el desarrollo en tiempo y forma del proyecto.&\begin{itemize}
-\item \textit{Establecer reuniones donde los integrantes puedan estar en constante comunicación.}
-\item \textit{Darle seguimiento a las tareas que cada uno desempeña.}
+\subsection{Requerimientos de interfaces externas}
+	La interfaz de la calculadora sera por medio de una pagina web, en la que se encontraran apartados para poner cada uno de los valores previamente dichos (Edad, genero, peso y estatura), se inclura un boton para la confirmacion de los datos y asi mismo realizara los calculos del imc.\\
+	Una vez presionado el boton se dezplegara en la parte inferior de este informacion relacionada con los calculos realizados y asi mismo, dira en que apartado de la tabla del imc se encuentra.\\
+	
+\subsection{Requerimientos no funcionales}
+\begin{itemize}
+	\item\textit{El sistema debe funcionar en un navegador web Chrome en su ultima version, Firefox en la 			ultima version, Edge version mayor a las dos ultimas lanzadas, IE 11.}
+	\item\textit{El sistema debe dar salida con un tiempo maximo de 2 segundos.}
 \end{itemize}
-&Líder del proyecto.\\\hline
-
-R2&Porque se tendría que cambiar el tema del proyecto a desarrollar.&\begin{itemize}
-\item \textit{Hallar la base de datos Spotify que contenga al menos 1 millón de registros.}
-\item \textit{Proponer alternativas eficientes en caso de no hallar la información exacta.}
-\end{itemize}&Equipo de trabajo, Líder del proyecto.\\\hline
-
-R3&Porque en caso de retrasarse el proyecto se vería afectada la entrega final del proyecto y la evaluación parcial de los integrantes del proyecto.&\begin{itemize}
-\item \textit{Revisar que las actividades de cada integrante del equipo de trabajo se estén realizando de acuerdo a lo establecido.}
-\item \textit{Utilizar kanban automatizados con reviewers que estén monitoreando que se lleven a cabo las actividades.}
-\end{itemize} 
-&Líder del proyecto.\\\hline
-
-R4&Porque esta dificultad pone en riesgo la entrega final del proyecto y un posible retraso en las etapas siguientes.&\begin{itemize}
-\item \textit{Estar continuamente revisando que los Issues se estén realizando.}
-\item \textit{Solicitar apoyo al líder del proyecto con las posibles dudas o imprevistos.}
-\end{itemize}
-&Líder del proyecto, Equipo de trabajo.\\\hline
-\end{tabular}
-\end{table}
-
-\newpage
-
-\begin{table}[h!]
-\begin{tabular}{|p{0.10\linewidth}|p{0.30\linewidth}|p{0.40\linewidth}|p{0.15\linewidth}|}
-\hline
-\textbf{ID Riesgo}&\textbf{Importancia del riesgo}&\textbf{Cómo minimizarlo}&\textbf{Quien lo supervisa}
-\\\hline
-
-R5&Porque es necesario llevar el control de los commits de los avances del proyecto y poder sacar un release para hacer las pruebas correspondientes.&\begin{itemize}
-\item \textit{Asignar a un integrantes del equipo que tenga un manejo de git.}
-\item \textit{Estar en constante comunicación con el líder del proyecto para que apruebe los cambios e integraciones nuevas de código.}
-\end{itemize}&Equipo de trabajo, Líder del proyecto.\\\hline
-
-R6&Podría repercutir gravemente en el avance del proyecto causando problemas en la funcionalidad del código ya en producción o en alguna otra etapa importante de este.&\begin{itemize}
-\item \textit{Se deberá solicitar Pull Request al líder del proyecto para la integración de las nuevas funcionalidades del proyecto y revisión de las mismas.}
-\item \textit{Habilitar la protección de cada Branch a través de la integración continua definiendo las reglas necesarias en cada Branch.}
-\end{itemize} 
-&Líder del proyecto.\\\hline
-
-R7&Porque no se cumpliría con el objetivo principal, dejando de lado los requerimientos del sistema.&\begin{itemize}
-\item \textit{Llevar un buen control de la documentación y planificación del proyecto.}
-\item \textit{Hacer revisiones continuas de cada avance del proyecto.}
-\end{itemize} 
-&Equipo de trabajo, Líder del proyecto.\\\hline
-
-R8&Porque no se podría mandar esa parte del desarrollo a producción, causaría retrasos y no cumpliría con los requerimientos del sistema .&\begin{itemize}
-\item \textit{Codificar las pruebas necesarias para hacer cumplir los requerimientos.}
-\item \textit{Se deberá volver a la etapa de desarrollo para hacer las correcciones necesarias y así garantizar que se pasen todas las pruebas.}
-\end{itemize} 
-&Equipo de trabajo, Líder del proyecto.\\\hline
-
-\end{tabular}
-\end{table}
 
 \end{document}
